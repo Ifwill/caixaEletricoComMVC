@@ -35,9 +35,12 @@ public class CaixaController {
 	}
 
 	public void depositar(Scanner lerDados) {
+		float saldo = conta.getCaixa();
 		float valor = 0;
+		float r = 0;
 		valor = caixaView.depositar(lerDados);
-		conta.setCaixa(valor);
+		r = saldo + valor;
+		conta.setCaixa(r);
 		System.out.println("Deposito no valor de: " + conta.getCaixa());
 	}
 
